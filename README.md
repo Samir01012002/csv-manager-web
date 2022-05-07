@@ -1,27 +1,26 @@
-# CsvManagerWeb
+# Csv manager web
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.4.
+## Este proyecto es la parte grafica de `csv-manager-api`.
 
-## Development server
+## Configuración inicial
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### Primero se debe poner la ruta de la API en el siguiente ruta de archivo:
 
-## Code scaffolding
+`{proyecto} > src > app > global > constans.ts` 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Ahí se debe agregar lo siguiente: 
 
-## Build
+```
+export const CONSTANTS = {
+  URL_BASE_API: "http://localhost:7000",
+  STORAGE_TOKEN: 'token_user_logged'
+}
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Para ejecutar el proyecto se debe validar tener Angular CLI en la maquina. Una vez seguro de tener angular CLI en la maquina, se procede a ejecutar los siguientes comandos:
 
-## Running end-to-end tests
+`npm install` (Instalará todos lo paquetes necesarios)
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+`npm start` o `ng serve` (Ejecutará el proyecto y le mostrará en el puedo donde se va a ejecutar)
