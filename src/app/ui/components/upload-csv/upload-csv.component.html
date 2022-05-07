@@ -1,0 +1,21 @@
+<div class="d-flex flex-wrap justify-content-center  p-2">
+  <div class="card">
+    <div class="card-body">
+      <div class="d-flex align-items-center">
+        <input class="form-control mr-2" type="file" id="formFile" accept=".csv" (change)="selectFile($event)">
+      </div>
+    </div>
+
+  </div>
+  <div class="">
+    <div class="card-body">
+      <div class="d-flex align-items-center">
+        <button class="btn btn-success" (click)="uploadCsv()">
+          <span class="material-icons">
+            upload_file
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

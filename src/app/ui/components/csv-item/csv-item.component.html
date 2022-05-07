@@ -1,0 +1,38 @@
+<div class="card m-2 item-csv" style="width: 18rem;" *ngIf="item"  (click)="csvDetails(content)" >
+  <img class="mt-1 card-img-top" src="./../../../../assets/img/csv.svg" style="width: 18rem; height: 12rem">
+  <div class="card-body">
+    <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+    <div class="d-flex flex-column align-items-center justify-content-between">
+      <h5 class="card-title">{{ item.csv.name }}</h5>
+      <div class="form-text">  {{ item.createdAt | slice:0:10 }}  </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h3 class="modal-title" id="modal-basic-title"> {{ item.csv.name }} ({{item.csv.data.length}}) </h3>
+    <button type="button" class="btn-close" aria-label="Close" (click)="d('Cross click')"></button>
+  </div>
+  <div class="modal-body d-flex flex-wrap">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th scope="col" *ngFor="let arr of item.csv.data[0]; index as i" >
+          {{ arr }}
+        </th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let arr of item.csv.data; index as i">
+        <ng-container *ngIf="i != 0">
+          <td *ngFor="let value of arr">{{ value }}</td>
+        </ng-container>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="modal-footer">
+    <h6>{{ item.createdAt | slice:0:10 }}</h6>
+  </div>
+</ng-template>

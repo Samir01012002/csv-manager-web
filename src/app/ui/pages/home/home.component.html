@@ -1,0 +1,16 @@
+<app-navbar></app-navbar>
+<app-upload-csv></app-upload-csv>
+<app-csv-list></app-csv-list>
+
+<div *ngIf="logIsOpen">
+  <div class="d-flex flex-wrap justify-content-center p-2">
+    <div class=" bg-black log-container">
+      <h6 class="text-log-white" *ngFor="let text of logData">
+        {{ text }}
+      </h6>
+    </div>
+  </div>
+</div>
+
+
+
